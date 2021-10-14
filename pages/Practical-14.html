@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Counter</title>
+    <style>
+      body {
+        background-color: grey;
+      }
+      h1 {
+        color: white;
+        font-size: 50px;
+        text-align: center;
+      }
+      .cobox {
+        text-align: center;
+      }
+      #increment {
+        font-size: 30px;
+        margin-right: 20px;
+        background-color: yellowgreen;
+      }
+      #decrement {
+        font-size: 30px;
+        margin-right: 20px;
+        background-color: yellowgreen;
+      }
+      #number {
+        font-size: 30px;
+        margin-right: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="heading">
+      <h1>COUNTER</h1>
+    </div>
+    <div class="cobox">
+      <button id="decrement" type="button" class="btn btn-light">-</button>
+      <button id="number" type="button" class="btn btn-light text-center">
+        0
+      </button>
+      <button id="increment" type="button" class="btn btn-dark">+</button>
+    </div>
+    <script>
+      let add = document.getElementById("increment");
+      let sub = document.getElementById("decrement");
+      let no = document.getElementById("number");
+
+      let count = 0;
+
+      add.onclick = function () {
+        count += 1;
+        no.innerHTML = count;
+        document.getElementById("decrement").style.backgroundColor =
+          "yellowgreen";
+      };
+
+      sub.onclick = function () {
+        if (count > 0) {
+          count -= 1;
+          no.innerHTML = count;
+        }
+
+        if (count === 0) {
+          count = 0;
+          document.getElementById("decrement").style.backgroundColor =
+            "#C8C2BC";
+        }
+      };
+    </script>
+  </body>
+</html>
